@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" href="/img/Logo_1.png" type="image/x-icon" />
-    <link rel="shortcut icon" href="Logo_1.png" type="image/x-icon" />
+    <link rel="stylesheet" href="style.css" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css"
@@ -12,30 +12,53 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
+    <script src="https://cdn.tailwindcss.com"></script>
     <title>Portfolio of Bamfa Ceesay (BC Tech)</title>
-    <link rel="stylesheet" href="style.css" />
   </head>
+
   <body>
-    <div class="navbar">
-      <div class="navbar-toggle" id="navbar-toggle">
-        <i class="fas fa-bars"></i>
-        <!-- Hamburger icon -->
+    <nav
+      class="sticky top-0 z-20 bg-gray-600 shadow-lg transition-colors duration-400 ease-in active navbar"
+    >
+      <div class="flex justify-between items-center w-full px-6 py-4">
+        <button
+          class="md:hidden text-white focus:outline-none"
+          id="navbar-toggle"
+        >
+          <i class="fas fa-bars"></i>
+        </button>
+
+        <img src="img/Logo_1.png" alt="Logo" class="w-20 h-20 ml-24" />
+
+        <ul
+          class="hidden md:flex space-x-4 lg:mr-24 list-none text-white font-cursive"
+        >
+          <li><button data-href="home" class="hover:underline">Home</button></li>
+          <li><button data-href="skills" class="hover:underline">Skills</button></li>
+          <li><button data-href="project" class="hover:underline">Projects</button></li>
+        </ul>
       </div>
+    </nav>
 
-      <img src="img/Logo_1.png" alt="Logo" />
-      <ul>
-        <li><a href="#home">Home</a></li>
-        <li><a href="#skills">Skills</a></li>
-        <li><a href="#project">Projects</a></li>
-      </ul>
-    </div>
-
-    <!--Home section-->
-    <div class="top-container" id="home">
-      <img src="img/Bamfa.jpg" alt="" />
-      <h1>Bamfa Ceesay</h1>
-      <div class="auto-text"></div>
-    </div>
+    <!-- Home Section -->
+    <section
+      id="home"
+      class="relative h-[calc(100vh-112px)] flex flex-col justify-center items-center text-center"
+      
+    >
+      <img src="https://th.bing.com/th/id/OIP.-Mo94JUgsSFT9i6iopDY8gHaEK?rs=1&pid=ImgDetMain" alt="" class="bg-no-repeat bg-fixed bg-center bg-cover top-container w-full h-full object-cover absolute -z-10">
+      <img
+        src="img/Bamfa.png"
+        alt="Bamfa Ceesay"
+        class="w-80 h-80 mt-0 border-4 border-black rounded-full"
+      />
+      <h1 class="text-black uppercase text-5xl font-bold mt-6 tracking-wider">
+        Bamfa Ceesay
+      </h1>
+      <div
+        class="auto-text font-permanent-marker text-3xl font-semibold mt-4"
+      ></div>
+    </section>
 
     <!--Skills section-->
     <div class="bottom-container" id="skills">
@@ -77,21 +100,34 @@
       </div>
     </div>
 
-    <div class="footer">
+    <div class="footer bg-gray-400">
       <div class="icons">
-        <a href="mailto:bamfaceesay30@gmail.com" class="fas fa-comment"></a>
         <a
+          target="_blank"
+          href="mailto:bamfaceesay30@gmail.com"
+          class="fas fa-comment"
+        ></a>
+        <a
+          target="_blank"
           href="https://www.facebook.com/alhagieomarbamfa.ceesay"
           class="fab fa-facebook-f"
         ></a>
-        <a href="https://wa.me/2207109836" class="fab fa-whatsapp"></a>
-        <a href="tel:+2203429409" class="fas fa-phone-alt"></a>
-        <a href="https://github.com/BCEESAY10" class="fab fa-github"></a>
+        <a
+          target="_blank"
+          href="https://wa.me/2207109836"
+          class="fab fa-whatsapp"
+        ></a>
+        <a target="_blank" href="tel:+2203429409" class="fas fa-phone-alt"></a>
+        <a target="_blank" href="http://" class="fab fa-linkedin"></a>
+        <a
+          target="_blank"
+          href="https://github.com/BCEESAY10"
+          class="fab fa-github"
+        ></a>
       </div>
       <p>Powered by &copy; BC Tech - 2023.</p>
     </div>
 
     <script src="index.js"></script>
-    <script src="index-skills.js"></script>
   </body>
 </html>

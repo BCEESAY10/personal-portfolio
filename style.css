@@ -19,6 +19,7 @@ body{
     background-position: center;
     background-attachment: fixed;
     transition: scroll 0.4s;
+    z-index: 1;
 }
 .top-container img{
     width: 17em;
@@ -26,6 +27,7 @@ body{
     margin-top: 110px;
     border: 5px solid black;
     border-radius: 50%;
+    z-index: 10;
 }
 .top-container h1{
     color: black;
@@ -33,11 +35,13 @@ body{
     font-size: 50px;
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     letter-spacing: 2px;
+    z-index: 10;
 }
 .top-container .auto-text{
     font-family: "Permanent Marker", cursive;
     font-size: 30px;
     font-weight: 600;
+    z-index: 10;
 }
 .text{
     margin: 50px 5%;
@@ -63,13 +67,14 @@ body{
 .navbar{
     display: flex;
     position: fixed;
-    background-color: rgba(0, 0, 0, 0.8);
+    background-color: rgba(0, 50, 90, 0.7);
     width: 100%;
     justify-content: space-between;
     align-items: center;
     font-size: 18px;
     box-shadow: 0 4px 8px rgb(85, 83, 82);
     transition: background-color 0.4s ease-in;
+    z-index: 20;
 }
 .navbar ul{
     display: flex;

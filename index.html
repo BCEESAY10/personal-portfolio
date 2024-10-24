@@ -33,9 +33,27 @@
         <ul
           class="hidden md:flex space-x-4 lg:mr-24 list-none text-white font-cursive"
         >
-          <li><button data-href="home" class="hover:underline">Home</button></li>
-          <li><button data-href="skills" class="hover:underline">Skills</button></li>
-          <li><button data-href="project" class="hover:underline">Projects</button></li>
+          <li>
+            <button data-href="home" class="hover:underline lg:mx-4 lg:text-xl">
+              Home
+            </button>
+          </li>
+          <li>
+            <button
+              data-href="skills"
+              class="hover:underline lg:mx-4 lg:text-xl"
+            >
+              Skills
+            </button>
+          </li>
+          <li>
+            <button
+              data-href="project"
+              class="hover:underline lg:mx-4 lg:text-xl"
+            >
+              Projects
+            </button>
+          </li>
         </ul>
       </div>
     </nav>
@@ -44,42 +62,182 @@
     <section
       id="home"
       class="relative h-[calc(100vh-112px)] flex flex-col justify-center items-center text-center"
-      
     >
-      <img src="https://th.bing.com/th/id/OIP.-Mo94JUgsSFT9i6iopDY8gHaEK?rs=1&pid=ImgDetMain" alt="" class="bg-no-repeat bg-fixed bg-center bg-cover top-container w-full h-full object-cover absolute -z-10">
+      <img
+        src="https://th.bing.com/th/id/OIP.-Mo94JUgsSFT9i6iopDY8gHaEK?rs=1&pid=ImgDetMain"
+        alt=""
+        class="bg-no-repeat bg-fixed bg-center bg-cover top-container w-full h-full object-cover absolute -z-10"
+      />
       <img
         src="img/Bamfa.png"
         alt="Bamfa Ceesay"
-        class="w-80 h-80 mt-0 border-4 border-black rounded-full"
+        class="w-60 h-60 md:w-80 md:h-80 mt-0 border-4 border-black rounded-full"
       />
-      <h1 class="text-black uppercase text-5xl font-bold mt-6 tracking-wider">
+      <h1
+        class="text-black uppercase text-3xl md:text-5xl font-bold mt-6 tracking-wider"
+      >
         Bamfa Ceesay
       </h1>
       <div
-        class="auto-text font-permanent-marker text-3xl font-semibold mt-4"
+        class="auto-text font-permanent-marker text-xl md:text-3xl font-semibold mt-4"
       ></div>
     </section>
 
-    <!--Skills section-->
-    <div class="bottom-container" id="skills">
-      <h2>Skills</h2>
-      <div class="skill-container">
-        <div class="skill" data-skill="HTML CSS & JS" data-percent="95"></div>
-        <div class="skill" data-skill="Python" data-percent="80"></div>
-        <div class="skill" data-skill="Java" data-percent="80"></div>
-        <div class="skill" data-skill="Graphic design" data-percent="95"></div>
-        <div class="skill" data-skill="React" data-percent="75"></div>
-        <div class="skill" data-skill="SQL" data-percent="85"></div>
-        <div
-          class="skill"
-          data-skill="Microsoft suites"
-          data-percent="95"
-        ></div>
-      </div>
-    </div>
+    <!-- Skills Section -->
+    <section
+      class="bottom-container h-max flex flex-col justify-center items-center"
+      id="skills"
+    >
+      <h2 class="text-4xl font-bold text-[#035C16] text-center my-8">Skills</h2>
 
+      <div
+        class="skill-container grid grid-cols-1 md:grid-cols-2 gap-6 w-11/12 md:w-8/12"
+      >
+        <div
+          class="skill relative bg-[#035C16]/50 rounded-md overflow-hidden w-full"
+          data-percent="95"
+        >
+          <div
+            class="skill-bar transition-[width] h-5 bg-[#035C16] text-center text-white font-bold rounded-md w-max"
+          ></div>
+          <div class="skill-label font-semibold">HTML, CSS & JS</div>
+        </div>
+
+        <div
+          class="skill relative bg-[#035C16]/50 rounded-md overflow-hidden w-full"
+          data-percent="75"
+        >
+          <div
+            class="skill-bar transition-[width] h-5 bg-[#035C16] text-center text-white font-bold rounded-md w-max"
+          ></div>
+          <div class="skill-label font-semibold">PYTHON</div>
+        </div>
+
+        <div
+          class="skill relative bg-[#035C16]/50 rounded-md overflow-hidden w-full"
+          data-percent="85"
+        >
+          <div
+            class="skill-bar transition-[width] h-5 bg-[#035C16] text-center text-white font-bold rounded-md w-max"
+          ></div>
+          <div class="skill-label font-semibold">JAVA</div>
+        </div>
+
+        <div
+          class="skill relative bg-[#035C16]/50 rounded-md overflow-hidden w-full"
+          data-percent="90"
+        >
+          <div
+            class="skill-bar transition-[width] h-5 bg-[#035C16] text-center text-white font-bold rounded-md w-max"
+          ></div>
+          <div class="skill-label font-semibold">ADOBE PHOTOSHOP</div>
+        </div>
+
+        <div
+          class="skill relative bg-[#035C16]/50 rounded-md overflow-hidden w-full"
+          data-percent="95"
+        >
+          <div
+            class="skill-bar transition-[width] h-5 bg-[#035C16] text-center text-white font-bold rounded-md w-max"
+          ></div>
+          <div class="skill-label font-semibold">CANVA</div>
+        </div>
+
+        <div
+          class="skill relative bg-[#035C16]/50 rounded-md overflow-hidden w-full"
+          data-percent="90"
+        >
+          <div
+            class="skill-bar transition-[width] h-5 bg-[#035C16] text-center text-white font-bold rounded-md w-max"
+          ></div>
+          <div class="skill-label font-semibold">FIGMA</div>
+        </div>
+
+        <div
+          class="skill relative bg-[#035C16]/50 rounded-md overflow-hidden w-full"
+          data-percent="80"
+        >
+          <div
+            class="skill-bar transition-[width] h-5 bg-[#035C16] text-center text-white font-bold rounded-md w-max"
+          ></div>
+          <div class="skill-label font-semibold">REACT</div>
+        </div>
+
+        <div
+          class="skill relative bg-[#035C16]/50 rounded-md overflow-hidden w-full"
+          data-percent="85"
+        >
+          <div
+            class="skill-bar transition-[width] h-5 bg-[#035C16] text-center text-white font-bold rounded-md w-max"
+          ></div>
+          <div class="skill-label font-semibold">SQL</div>
+        </div>
+
+        <div
+          class="skill relative bg-[#035C16]/50 rounded-md overflow-hidden w-full"
+          data-percent="100"
+        >
+          <div
+            class="skill-bar transition-[width] h-5 bg-[#035C16] text-center text-white font-bold rounded-md w-max"
+          ></div>
+          <div class="skill-label font-semibold">MICROSOFT SUITES</div>
+        </div>
+
+        <div
+          class="skill relative bg-[#035C16]/50 rounded-md overflow-hidden w-full"
+          data-percent="85"
+        >
+          <div
+            class="skill-bar transition-[width] h-5 bg-[#035C16] text-center text-white font-bold rounded-md w-max"
+          ></div>
+          <div class="skill-label font-semibold">NEXT JS</div>
+        </div>
+
+        <div
+          class="skill relative bg-[#035C16]/50 rounded-md overflow-hidden w-full"
+          data-percent="65"
+        >
+          <div
+            class="skill-bar transition-[width] h-5 bg-[#035C16] text-center text-white font-bold rounded-md w-max"
+          ></div>
+          <div class="skill-label font-semibold">REACT NATIVE</div>
+        </div>
+
+        <div
+          class="skill relative bg-[#035C16]/50 rounded-md overflow-hidden w-full"
+          data-percent="95"
+        >
+          <div
+            class="skill-bar transition-[width] h-5 bg-[#035C16] text-center text-white font-bold rounded-md w-max"
+          ></div>
+          <div class="skill-label font-semibold">TAIWIND CSS</div>
+        </div>
+
+        <div
+          class="skill relative bg-[#035C16]/50 rounded-md overflow-hidden w-full"
+          data-percent="90"
+        >
+          <div
+            class="skill-bar transition-[width] h-5 bg-[#035C16] text-center text-white font-bold rounded-md w-max"
+          ></div>
+          <div class="skill-label font-semibold">GIT</div>
+        </div>
+
+        <div
+          class="skill relative bg-[#035C16]/50 rounded-md overflow-hidden w-full"
+          data-percent="80"
+        >
+          <div
+            class="skill-bar transition-[width] h-5 bg-[#035C16] text-center text-white font-bold rounded-md w-max"
+          ></div>
+          <div class="skill-label font-semibold">EXPTRESS JS</div>
+        </div>
+
+      </div>
+    </section>
+
+    <!--Projects Section-->
     <div class="bottom-container" id="project">
-      <!--For Projects-->
       <h2>Projects</h2>
       <div class="bottom-container-2">
         <div class="stats-container">
@@ -118,7 +276,7 @@
           class="fab fa-whatsapp"
         ></a>
         <a target="_blank" href="tel:+2203429409" class="fas fa-phone-alt"></a>
-        <a target="_blank" href="http://" class="fab fa-linkedin"></a>
+        <a target="_blank" href="https://www.linkedin.com/in/bamfa-ceesay-b581042b4/" class="fab fa-linkedin"></a>
         <a
           target="_blank"
           href="https://github.com/BCEESAY10"

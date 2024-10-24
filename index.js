@@ -7,15 +7,12 @@ const topContainerParent = topContainerEl.closest("section")
 
 const bottomContainer = document.querySelector(".bottom-container");
 
-
+//Scroll control on navigations
 document.querySelectorAll("[data-href]").forEach(button=>{
   button.addEventListener("click", ()=>{
     const target = document.getElementById(button.dataset.href)
     if (target){
-      target.scroll({
-        top:0,
-        behavior:"smooth"
-      })
+      target.scrollIntoView({block:{}})
     }
   })
 })
@@ -129,32 +126,52 @@ countersEl.forEach((counterEl) => {
   }
 });
 
+
 //JS Code for the progress bar animation in skills section
 
 document.addEventListener("DOMContentLoaded", function () {
+  const skillsSection = document.getElementById("skills");
   const skills = document.querySelectorAll(".skill");
+  let animationTriggered = false; 
 
-  skills.forEach((skill) => {
-      const percent = skill.dataset.percent;
-      const skillBar = document.createElement("div");
-      skillBar.classList.add("skill-bar");
-      skillBar.style.width = "0"; // Start with zero width
-      skillBar.innerText = "0%"; // Initial text
+  function startSkillAnimation() {
+    skills.forEach((skill) => {
+      const percent = parseInt(skill.dataset.percent);
+      const skillBar = skill.querySelector(".skill-bar");
+      let width = 0;
 
-      const skillLabel = document.createElement("div");
-      skillLabel.classList.add("skill-label");
-      skillLabel.innerText = skill.dataset.skill;
-
-      skill.appendChild(skillBar);
-      skill.appendChild(skillLabel);
-
-      // Trigger the animation by adding a class after a short delay
-      setTimeout(() => {
-          skillBar.style.width = percent + "%";
-          skillBar.innerText = percent + "%";
+      let int = setInterval(() => {
+        if (width >= percent) {
+          clearInterval(int);
+        } else {
+          width += 5;
+          skillBar.style.width = width + "%";
+          skillBar.innerText = width + "%";
+        }
       }, 100);
-  });
+    });
+  }
+
+  // Set up the Intersection Observer to detect when the skills section is in view
+  const observer = new IntersectionObserver(
+    (entries) => {
+      const [entry] = entries;
+
+      if (entry.isIntersecting && !animationTriggered) {
+        animationTriggered = true;
+
+        setTimeout(() => {
+          startSkillAnimation();
+        }, 500); 
+      }
+    },
+    { threshold: 0.5 }
+  );
+
+  observer.observe(skillsSection);
 });
+
+
 
 //Script for Graphics section
 const nextEl = document.querySelector(".next");
@@ -175,7 +192,7 @@ nextEl?.addEventListener("click", () => {
   updateImg();
 });
 
-prevEl.addEventListener("click", () => {
+prevEl?.addEventListener("click", () => {
   currentImg--;
   clearTimeout(timeout);
   updateImg();
@@ -189,6 +206,7 @@ function updateImg() {
   } else if (currentImg < 1) {
     currentImg = imgsEl.length;
   }
+  if (imageContainerEl)
   imageContainerEl.style.transform = `translateX(-${(currentImg - 1) * 500}px)`;
   timeout = setTimeout(() => {
     currentImg++;

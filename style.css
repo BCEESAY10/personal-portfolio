@@ -9,120 +9,18 @@ html {
     scroll-behavior: smooth;
   }
   
-/* 
-.top-container {
-  background-image: url("https://th.bing.com/th/id/OIP.-Mo94JUgsSFT9i6iopDY8gHaEK?rs=1&pid=ImgDetMain");
-  height: 100vh;
-  background-size: 160%;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  background-position: center;
-  background-attachment: fixed;
-  transition: scroll 0.4s;
-  z-index: 1;
-}
-.top-container img {
-  width: 20em;
-  height: 20em;
-  margin-top: 110px;
-  border: 5px solid black;
-  border-radius: 50%;
-  z-index: 10;
-}
-.top-container h1 {
-  color: black;
-  text-transform: uppercase;
-  font-size: 50px;
-  font-family: Verdana, sans-serif;
-  letter-spacing: 2px;
-  z-index: 10;
-}
-.top-container .auto-text {
-  font-family: "Permanent Marker", cursive;
-  font-size: 30px;
-  font-weight: 600;
-  margin: 2rem;
-  z-index: 10;
-}
-.text {
-  margin: 50px 5%;
-  font-family: sans-serif;
-}
-@media (max-width: 380px) {
-  .top-container img {
-    width: 16em;
-    height: 16em;
-    margin-top: 8rem;
-    border: 3.5px solid black;
-    border-radius: 50%;
-  }
-  .top-container h1 {
-    color: black;
-    text-transform: uppercase;
-    font-size: 24px;
-    letter-spacing: 1.3px;
-  }
-  .top-container .auto-text {
-    font-family: "Permanent Marker", cursive;
-    font-size: 20px;
-    font-weight: 400;
-    z-index: 10;
-  }
-} */
-
 
 .navbar.active {
-  background-color: rgb(3, 92, 22);
+  background-color: rgba(3, 92, 22);
 }
 
 
-
-.bottom-container {
-  height: 100vh;
-  transition: scroll 0.4s;
-}
-
-.bottom-container h2 {
-  text-align: center;
-  color: orange;
-}
-
-.skill-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.skill {
-  width: 80%;
-  margin: 10px 0;
-  background-color: orange;
-  border-radius: 5px;
-  overflow: hidden;
-}
-
-.skill-bar {
-  height: 20px;
-  background-color: orangered;
-  text-align: center;
-  line-height: 20px;
-  border-radius: 7px;
-  color: white;
-  font-weight: bold;
-  width: 0; /* Start with zero width */
-  transition: width 5s ease;
-}
 
 .skill-label {
-  padding: 10px;
+  padding: 6px;
   text-align: center;
-  font-family: "Permanent marker", poppins, courier;
-  font-weight: bold;
 }
-.animate-width {
-  width: 100% !important;
-}
+
 
 #project {
   height: 50vh;

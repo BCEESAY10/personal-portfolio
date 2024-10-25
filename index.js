@@ -105,27 +105,6 @@ function updateText() {
   setTimeout(updateText, 500);
 }
 
-//JS Code for the Project section
-const countersEl = document.querySelectorAll(".counter");
-
-countersEl.forEach((counterEl) => {
-  counterEl.innerText = "0";
-  incrementCounter();
-  function incrementCounter() {
-    let currentNum = +counterEl.innerText;
-    const dataCeil = counterEl.getAttribute("data-ceil");
-    const increment = dataCeil / 15;
-    currentNum = Math.ceil(currentNum + increment);
-
-    if (currentNum < dataCeil) {
-      counterEl.innerText = currentNum;
-      setTimeout(incrementCounter, 50);
-    } else {
-      counterEl.innerText = dataCeil;
-    }
-  }
-});
-
 
 //JS Code for the progress bar animation in skills section
 
@@ -172,45 +151,27 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 
+//Handling the slider for the projects section
+document.addEventListener("DOMContentLoaded", () => {
+  const slider = document.getElementById("slider");
+  const prevButton = document.getElementById("prev");
+  const nextButton = document.getElementById("next");
 
-//Script for Graphics section
-const nextEl = document.querySelector(".next");
+  let scrollAmount = 0;
+  const scrollStep = 100;
 
-const prevEl = document.querySelector(".prev");
+  nextButton.addEventListener("click", () => {
+    const maxScroll = slider.scrollWidth - slider.clientWidth;
+    if (scrollAmount < maxScroll) {
+      scrollAmount += scrollStep;
+      slider.style.transform = `translateX(-${scrollAmount}px)`;
+    }
+  });
 
-const imgsEl = document.querySelectorAll("img");
-
-const imageContainerEl = document.querySelector(".image-container");
-
-let currentImg = 1;
-
-let timeout;
-
-nextEl?.addEventListener("click", () => {
-  currentImg++;
-  clearTimeout(timeout);
-  updateImg();
+  prevButton.addEventListener("click", () => {
+    if (scrollAmount > 0) {
+      scrollAmount -= scrollStep;
+      slider.style.transform = `translateX(-${scrollAmount}px)`;
+    }
+  });
 });
-
-prevEl?.addEventListener("click", () => {
-  currentImg--;
-  clearTimeout(timeout);
-  updateImg();
-});
-
-updateImg();
-
-function updateImg() {
-  if (currentImg > imgsEl.length) {
-    currentImg = 1;
-  } else if (currentImg < 1) {
-    currentImg = imgsEl.length;
-  }
-  if (imageContainerEl)
-  imageContainerEl.style.transform = `translateX(-${(currentImg - 1) * 500}px)`;
-  timeout = setTimeout(() => {
-    currentImg++;
-    updateImg();
-  }, 3000);
-}
-

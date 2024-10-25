@@ -8,14 +8,23 @@ const topContainerParent = topContainerEl.closest("section")
 const bottomContainer = document.querySelector(".bottom-container");
 
 //Scroll control on navigations
-document.querySelectorAll("[data-href]").forEach(button=>{
-  button.addEventListener("click", ()=>{
-    const target = document.getElementById(button.dataset.href)
-    if (target){
-      target.scrollIntoView({block:{}})
+document.querySelectorAll("[data-href]").forEach(button => {
+  button.addEventListener("click", () => {
+    const target = document.getElementById(button.dataset.href);
+    const navbarHeight = document.querySelector(".navbar").offsetHeight;
+
+    if (target) {
+
+      const scrollPosition = target.getBoundingClientRect().top + window.scrollY - navbarHeight;
+      
+      window.scrollTo({
+        top: scrollPosition,
+        behavior: "smooth"
+      });
     }
-  })
-})
+  });
+});
+
 
 window.addEventListener("scroll", ()=> {
     if(window.scrollY > bottomContainer.offsetTop - navbarEl.offsetHeight - 50){
@@ -32,11 +41,6 @@ window.addEventListener("scroll", ()=>{
 function updateImage(){
     topContainerEl.style.opacity = 1 - window.scrollY / 900;
     topContainerEl.style.backgroundSize = 160 - window.scrollY/12 + "%";
-    console.log("Position", topContainerParent.getBoundingClientRect());
-    
-    console.log("Opacity", (1 - window.scrollY / 900),);
-    console.log("BgSize", 160 - window.scrollY/12 + "%");
-    
     
 }
 

@@ -49,30 +49,27 @@ document.addEventListener("DOMContentLoaded", function () {
   var navbarToggle = document.getElementById('navbar-toggle');
   var navbarMenu = document.querySelector('ul');
 
-  // Toggle the menu for small screens
   navbarToggle.addEventListener('click', function () {
     if (window.innerWidth < 768) { 
-      navbarMenu.style.display = (navbarMenu.style.display === 'flex') ? 'none' : 'flex';
+      navbarMenu.classList.toggle('hidden');
     }
   });
 
-  // Close the menu when a menu item is clicked (only for small screens)
-  var navbarItems = document.querySelectorAll('ul a');
+  var navbarItems = document.querySelectorAll('ul button');
 
   navbarItems.forEach(function (item) {
     item.addEventListener('click', function () {
       if (window.innerWidth < 768) { 
-        navbarMenu.style.display = 'none';
+        navbarMenu.classList.add('hidden'); 
       }
     });
   });
 
-  // Ensure menu is always visible for larger screens
   window.addEventListener('resize', function () {
     if (window.innerWidth >= 768) {
-      navbarMenu.style.display = 'flex';
+      navbarMenu.classList.remove('hidden');
     } else {
-      navbarMenu.style.display = 'none';
+      navbarMenu.classList.add('hidden');
     }
   });
 });

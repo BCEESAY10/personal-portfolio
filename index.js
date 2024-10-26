@@ -7,6 +7,25 @@ const topContainerParent = topContainerEl.closest("section")
 
 const bottomContainer = document.querySelector(".bottom-container");
 
+
+window.addEventListener("scroll", ()=> {
+    if(window.scrollY > bottomContainer.offsetTop - navbarEl.offsetHeight - 50){
+        navbarEl.classList.add("active");
+    } else{
+        navbarEl.classList.remove("active");
+    }
+});
+
+window.addEventListener("scroll", ()=>{
+    updateImage()
+});
+
+function updateImage(){
+    topContainerEl.style.opacity = 1 - window.scrollY / 900;
+    topContainerEl.style.backgroundSize = `${160 - window.scrollY / 12}%`;
+    
+}
+
 //Scroll control on navigations
 document.querySelectorAll("[data-href]").forEach(button => {
   button.addEventListener("click", () => {
@@ -24,25 +43,6 @@ document.querySelectorAll("[data-href]").forEach(button => {
     }
   });
 });
-
-
-window.addEventListener("scroll", ()=> {
-    if(window.scrollY > bottomContainer.offsetTop - navbarEl.offsetHeight - 50){
-        navbarEl.classList.add("active");
-    } else{
-        navbarEl.classList.remove("active");
-    }
-});
-
-window.addEventListener("scroll", ()=>{
-    updateImage()
-});
-
-function updateImage(){
-    topContainerEl.style.opacity = 1 - window.scrollY / 900;
-    topContainerEl.style.backgroundSize = 160 - window.scrollY/12 + "%";
-    
-}
 
 //Harmburger menu for smaller devices
 document.addEventListener("DOMContentLoaded", function () {

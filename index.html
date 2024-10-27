@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" href="/img/Logo_1.png" type="image/x-icon" />
+    <link rel="icon" href="img/Logo_1.png" type="image/x-icon" />
     <link rel="stylesheet" href="style.css" />
     <link
       rel="stylesheet"
@@ -31,7 +31,7 @@
         <img src="img/Logo_1.png" alt="Logo" class="w-20 h-20 ml-24" />
 
         <ul
-          class="hidden md:flex space-x-4 lg:mr-24 list-none text-white font-cursive"
+          class="hidden fixed left-24 text-center bg-black md:bg-transparent px-10 md:px-0 py-2 md:py-0 md:text-right md:flex md:flex-row md:static md:space-y-0 space-x-4 lg:mr-24 list-none text-white font-cursive"
         >
           <li>
             <button data-href="home" class="hover:underline lg:mx-4 lg:text-xl">
@@ -88,7 +88,7 @@
       class="bottom-container h-max flex flex-col justify-center items-center"
       id="skills"
     >
-      <h2 class="text-4xl font-bold text-[#035C16] text-center my-8">Skills</h2>
+      <h2 class="text-4xl font-bold text-[#035C16] text-center my-4">Skills</h2>
 
       <div
         class="skill-container grid grid-cols-1 md:grid-cols-2 gap-6 w-11/12 md:w-8/12"
@@ -237,13 +237,13 @@
     </section>
 
  <!-- Projects Section -->
-<section class="bg-gray-100 h-max mt-2 py-10">
-  <div class="text-center mt-4">
+<section class="bg-gray-100 h-max mt-0 md:mt-2 py-10" id="project">
+  <div class="text-center mt-0 md:mt-2">
     <h2 class="text-4xl font-bold text-[#035C16]">Projects</h2>
-    <p class="mt-4 text-gray-500 text-xl max-w-xl mx-auto">Explore my projects</p>
+    <p class="mt-1 md:mt-4 text-gray-500 text-xl max-w-xl mx-auto">Explore my projects</p>
   </div>
 
-  <div class="relative mt-12 px-4 lg:px-16 overflow-hidden">
+  <div class="relative mt-6 md:mt-12 px-4 lg:px-16 overflow-hidden">
     <!-- Left Arrow -->
     <button id="prev" class="absolute left-0 top-1/2 transform -translate-y-1/2 bg-white p-4 rounded-full shadow-md z-10">
       <span class="text-2xl">←</span>
@@ -319,33 +319,60 @@
 
 
     
-<footer class="footer bg-gray-400">
-    <div class="icons">
-        <a
-          target="_blank"
-          href="mailto:bamfaceesay30@gmail.com"
-          class="fas fa-comment"
-        ></a>
-        <a
-          target="_blank"
-          href="https://www.facebook.com/alhagieomarbamfa.ceesay"
-          class="fab fa-facebook-f"
-        ></a>
-        <a
-          target="_blank"
-          href="https://wa.me/2207109836"
-          class="fab fa-whatsapp"
-        ></a>
-        <a target="_blank" href="tel:+2203429409" class="fas fa-phone-alt"></a>
-        <a target="_blank" href="https://www.linkedin.com/in/bamfa-ceesay-b581042b4/" class="fab fa-linkedin"></a>
-        <a
-          target="_blank"
-          href="https://github.com/BCEESAY10"
-          class="fab fa-github"
-        ></a>
-      </div>
-      <p>Powered by &copy; BC Tech - 2023.</p>
+<footer class="bg-gray-400 py-8 text-center">
+  <div class="flex justify-center space-x-4 mb-4">
+    
+    <a
+      target="_blank"
+      href="mailto:bamfaceesay30@gmail.com"
+      class="flex items-center justify-center h-12 w-12 md:h-16 md:w-16 border-2 border-[#035C16] text-[#035C16] rounded-full text-2xl transition-colors duration-200 hover:bg-white hover:text-green-800 hover:border-green-800"
+    >
+      <i class="fas fa-comment"></i>
+    </a>
+  
+    <a
+      target="_blank"
+      href="https://www.facebook.com/alhagieomarbamfa.ceesay"
+      class="flex items-center justify-center h-12 w-12 md:h-16 md:w-16 border-2 border-[#035C16] text-[#035C16] rounded-full text-2xl transition-colors duration-200 hover:bg-white hover:text-green-800 hover:border-green-800"
+    >
+      <i class="fab fa-facebook-f"></i>
+    </a>
+   
+    <a
+      target="_blank"
+      href="https://wa.me/2207109836"
+      class="flex items-center justify-center h-12 w-12 md:h-16 md:w-16 border-2 border-[#035C16] text-[#035C16] rounded-full text-2xl transition-colors duration-200 hover:bg-white hover:text-green-800 hover:border-green-800"
+    >
+      <i class="fab fa-whatsapp"></i>
+    </a>
+   
+    <a
+      target="_blank"
+      href="tel:+2203429409"
+      class="flex items-center justify-center h-12 w-12 md:h-16 md:w-16 border-2 border-[#035C16] text-[#035C16] rounded-full text-2xl transition-colors duration-200 hover:bg-white hover:text-green-800 hover:border-green-800"
+    >
+      <i class="fas fa-phone-alt"></i>
+    </a>
+   
+    <a
+      target="_blank"
+      href="https://www.linkedin.com/in/bamfa-ceesay-b581042b4/"
+      class="flex items-center justify-center h-12 w-12 md:h-16 md:w-16 border-2 border-[#035C16] text-[#035C16] rounded-full text-2xl transition-colors duration-200 hover:bg-white hover:text-green-800 hover:border-green-800"
+    >
+      <i class="fab fa-linkedin"></i>
+    </a>
+
+    <a
+      target="_blank"
+      href="https://github.com/BCEESAY10"
+      class="flex items-center justify-center h-12 w-12 md:h-16 md:w-16 border-2 border-[#035C16] text-[#035C16] rounded-full text-2xl transition-colors duration-200 hover:bg-white hover:text-green-800 hover:border-green-800"
+    >
+      <i class="fab fa-github"></i>
+    </a>
+  </div>
+  <p class="font-marker text-lg text-gray-700">Powered by &copy; BC Tech - 2023.</p>
 </footer>
+
 
     <script src="index.js"></script>
   </body>

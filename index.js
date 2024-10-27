@@ -7,15 +7,6 @@ const topContainerParent = topContainerEl.closest("section")
 
 const bottomContainer = document.querySelector(".bottom-container");
 
-//Scroll control on navigations
-document.querySelectorAll("[data-href]").forEach(button=>{
-  button.addEventListener("click", ()=>{
-    const target = document.getElementById(button.dataset.href)
-    if (target){
-      target.scrollIntoView({block:{}})
-    }
-  })
-})
 
 window.addEventListener("scroll", ()=> {
     if(window.scrollY > bottomContainer.offsetTop - navbarEl.offsetHeight - 50){
@@ -31,44 +22,54 @@ window.addEventListener("scroll", ()=>{
 
 function updateImage(){
     topContainerEl.style.opacity = 1 - window.scrollY / 900;
-    topContainerEl.style.backgroundSize = 160 - window.scrollY/12 + "%";
-    console.log("Position", topContainerParent.getBoundingClientRect());
-    
-    console.log("Opacity", (1 - window.scrollY / 900),);
-    console.log("BgSize", 160 - window.scrollY/12 + "%");
-    
+    topContainerEl.style.backgroundSize = `${160 - window.scrollY / 12}%`;
     
 }
+
+//Scroll control on navigations
+document.querySelectorAll("[data-href]").forEach(button => {
+  button.addEventListener("click", () => {
+    const target = document.getElementById(button.dataset.href);
+    const navbarHeight = document.querySelector(".navbar").offsetHeight;
+
+    if (target) {
+
+      const scrollPosition = target.getBoundingClientRect().top + window.scrollY - navbarHeight;
+      
+      window.scrollTo({
+        top: scrollPosition,
+        behavior: "smooth"
+      });
+    }
+  });
+});
 
 //Harmburger menu for smaller devices
 document.addEventListener("DOMContentLoaded", function () {
   var navbarToggle = document.getElementById('navbar-toggle');
   var navbarMenu = document.querySelector('ul');
 
-  // Toggle the menu for small screens
   navbarToggle.addEventListener('click', function () {
     if (window.innerWidth < 768) { 
-      navbarMenu.style.display = (navbarMenu.style.display === 'flex') ? 'none' : 'flex';
+      navbarMenu.classList.toggle('hidden');
     }
   });
 
-  // Close the menu when a menu item is clicked (only for small screens)
-  var navbarItems = document.querySelectorAll('ul a');
+  var navbarItems = document.querySelectorAll('ul button');
 
   navbarItems.forEach(function (item) {
     item.addEventListener('click', function () {
       if (window.innerWidth < 768) { 
-        navbarMenu.style.display = 'none';
+        navbarMenu.classList.add('hidden'); 
       }
     });
   });
 
-  // Ensure menu is always visible for larger screens
   window.addEventListener('resize', function () {
     if (window.innerWidth >= 768) {
-      navbarMenu.style.display = 'flex';
+      navbarMenu.classList.remove('hidden');
     } else {
-      navbarMenu.style.display = 'none';
+      navbarMenu.classList.add('hidden');
     }
   });
 });

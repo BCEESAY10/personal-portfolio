@@ -159,20 +159,24 @@ document.addEventListener("DOMContentLoaded", () => {
   const nextButton = document.getElementById("next");
 
   let scrollAmount = 0;
-  const scrollStep = 100;
 
   nextButton.addEventListener("click", () => {
-    const maxScroll = slider.scrollWidth - slider.clientWidth;
+    const maxScroll = slider.scrollWidth - slider.clientWidth; 
+    const pageWidth = slider.clientWidth; 
+
     if (scrollAmount < maxScroll) {
-      scrollAmount += scrollStep;
+      scrollAmount = Math.min(scrollAmount + pageWidth, maxScroll); 
       slider.style.transform = `translateX(-${scrollAmount}px)`;
     }
   });
 
   prevButton.addEventListener("click", () => {
+    const pageWidth = slider.clientWidth; 
+
     if (scrollAmount > 0) {
-      scrollAmount -= scrollStep;
+      scrollAmount = Math.max(scrollAmount - pageWidth, 0); 
       slider.style.transform = `translateX(-${scrollAmount}px)`;
     }
   });
 });
+
